@@ -31,7 +31,7 @@ async def v(ctx, choice): # voting command, usage :v <choice>, which in this cas
         await a.send("you already voted, silly!") # send them a message telling them they already voted
         return # return nothing, skip the rest of the function
     
-    if choice.toLower() in ["1", "2", "3", "z", "l", "r"]: # if the choice is either a one, two, or three (correct options)
+    if choice.lower() in ["1", "2", "3", "z", "l", "r"]: # if the choice is either a one, two, or three (correct options)
         uv.append(a) # add this person to the list of people who have voted
         if choice == "1" or choice == "z": # if they chose 1 (Zorro)
             await a.send("Logged your vote for **Zorro**.") # tell them their vote is counted
