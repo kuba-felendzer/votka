@@ -1,5 +1,5 @@
 # votka
-** A custom voting bot built for a server **
+**A custom voting bot built for a server**
 
 ## Usage
 
