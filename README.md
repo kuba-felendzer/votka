@@ -3,7 +3,7 @@
 
 ## Usage
 
-`:d`: lists out your options (Lobby, Zorro, Robot) with a number
+`:d`: lists out your options (Lobby, Zorro, Robot) with a number and letter
 
 `:v <num>`: lets you vote once for a number (1: Zorro 2: Lobby, 3: Robot). if you cast a valid vote like :v 1 to vote for Zorro, you cannot vote again.
 
