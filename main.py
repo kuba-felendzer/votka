@@ -31,17 +31,17 @@ async def v(ctx, choice): # voting command, usage :v <choice>, which in this cas
         await a.send("you already voted, silly!") # send them a message telling them they already voted
         return # return nothing, skip the rest of the function
     
-    if choice in ["1", "2", "3"]: # if the choice is either a one, two, or three (correct options)
+    if choice.toLower() in ["1", "2", "3", "z", "l", "r"]: # if the choice is either a one, two, or three (correct options)
         uv.append(a) # add this person to the list of people who have voted
-        if choice == "1": # if they chose 1 (Zorro)
+        if choice == "1" or choice == "z": # if they chose 1 (Zorro)
             await a.send("Logged your vote for **Zorro**.") # tell them their vote is counted
             await vlc.send("Someone voted for **Zorro**!") # tell the #votes channel someone voted for zorro
             z_votes += 1 # add one to zorro's votes
-        elif choice == "1": # if they chose 2 (Lobby)
+        elif choice == "2" or choice == "l": # if they chose 2 (Lobby)
             await a.send("Logged your vote for **Lobby**.") # tell them their vote is counted
             await vlc.send("Someone voted for **Lobby**!") # tell the #votes channel someone voted for lobby
             l_votes += 1 # add one to lobby's votes
-        elif choice == "3": # if they chose 3 (Robot)
+        elif choice == "3" or choice == "r": # if they chose 3 (Robot)
             await a.send("Logged your vote for **Robot**.") # tell them their vote is counted
             await vlc.send("Someone voted for **Robot**!") # tell the #votes channel someone voted for robot
             r_votes += 1 # add one to robot's votes
@@ -55,9 +55,9 @@ async def v(ctx, choice): # voting command, usage :v <choice>, which in this cas
 @bot.command(name="d") # creates a command of the name d
 async def d(ctx): # display command, usage :d
     voting_embed = discord.Embed(title="Director Election", description="Elect our new director!", color=10494192) # create the embed
-    voting_embed.add_field(name="Choice 1: ", value="Zorro, `:v 1`") # add zorro
-    voting_embed.add_field(name="Choice 2: ", value="Lobby, `:v 2`") # add lobby
-    voting_embed.add_field(name="Choice 3: ", value="Robot, `v: 3`") # add robot
+    voting_embed.add_field(name="Choice 1: ", value="Zorro, `:v 1` or `:v z`") # add zorro
+    voting_embed.add_field(name="Choice 2: ", value="Lobby, `:v 2` or `:v l`") # add lobby
+    voting_embed.add_field(name="Choice 3: ", value="Robot, `v: 3` or `:v r`") # add robot
     # this function just displays who is running and how to vote for them
     await ctx.send(embed=voting_embed) # send the embed in the chat that requested it
 
