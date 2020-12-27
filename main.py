@@ -64,7 +64,7 @@ async def d(ctx):
     voting_embed.add_field(name="Choice 2: ", value="Lobby")
     voting_embed.add_field(name="Choice 3: ", value="Robot")
 
-    await ctx.author.send(embed=voting_embed)
+    await ctx.send(embed=voting_embed)
 
 @bot.command(name="t")
 async def t(ctx):
